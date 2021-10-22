@@ -18,6 +18,7 @@ public class VentanaPrincipal extends JFrame
 	
 	/*
 	 * CONSTRUCTOR
+	 * s
 	 */
 	
 	public VentanaPrincipal()
