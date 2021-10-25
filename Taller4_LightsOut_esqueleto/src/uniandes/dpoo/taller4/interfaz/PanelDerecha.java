@@ -31,7 +31,7 @@ public class PanelDerecha extends JPanel{
 		Border border = BorderFactory.createTitledBorder("Menú");
 		this.setBorder(border);
 		
-		JButton Nuevo = new JButton("NUEVO");//TODO: Solo se puede uno al mismo tiempo.
+		JButton Nuevo = new JButton("NUEVO");
 		JButton Reiniciar = new JButton("REINICIAR");
 		JButton Top_10 = new JButton("TOP 10");
 		JButton CambiarJugador = new JButton("CAMBIAR JUGADOR");
