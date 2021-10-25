@@ -18,9 +18,11 @@ public class TableroPanel extends JPanel
 	public TableroPanel(VentanaPrincipal padre)
 	{
 		this.padre = padre;
-		this.setOpaque(true);
+		
 		this.setBackground(Color.black);
-		setMinimumSize(new Dimension(300, 300));
+		this.setOpaque(true);
+		setMinimumSize(new Dimension(500, 500));
+		setMaximumSize(new Dimension(500, 500));
 		
 		
 		

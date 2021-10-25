@@ -1,11 +1,15 @@
 package uniandes.dpoo.taller4.interfaz;
 
 import javax.swing.BoxLayout;
+import javax.swing.*;
+import java.awt.*;
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 public class PanelArriba extends JPanel
@@ -16,7 +20,12 @@ public class PanelArriba extends JPanel
 	{
 		
 		this.padre = padre;
+		GridLayout layout = new GridLayout(0, 6, 10, 0);
+		this.setLayout(layout);
+		//this.getPreferredSize(new Dimension());
 		
+		Border border = BorderFactory.createTitledBorder("Opciones de juego");
+		this.setBorder(border);
 		
 		JLabel lbl = new JLabel("Tamaño:");
 		lbl.setAlignmentX(LEFT_ALIGNMENT);

@@ -31,7 +31,7 @@ public class VentanaPrincipal extends JFrame
 		
 		setResizable(true);
 		
-		setSize(700,700);
+		setSize(800,700);
 		
 		// Panel de arriba
 		PanelArriba elDeArriba = new PanelArriba(this);
@@ -48,8 +48,8 @@ public class VentanaPrincipal extends JFrame
 		
 		add(izquierda, BorderLayout.CENTER);
 		
+		setLocationRelativeTo(null);
 		setVisible(true);
-		pack();
 	}
 
 }

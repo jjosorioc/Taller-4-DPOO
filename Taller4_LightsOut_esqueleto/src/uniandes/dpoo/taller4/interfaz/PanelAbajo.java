@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import java.awt.Color;
+import java.awt.GridLayout;
 @SuppressWarnings("serial")
 public class PanelAbajo extends JPanel
 {
@@ -16,7 +17,13 @@ public class PanelAbajo extends JPanel
 	{
 		this.padre = padre;
 		
-		Border border = BorderFactory.createLineBorder(Color.BLUE, 2);
+		GridLayout layout = new GridLayout(0, 4, 10, 0);
+		this.setLayout(layout);
+		
+		Border borderPrincipal = BorderFactory.createTitledBorder("Actividades del juego activo");
+		this.setBorder(borderPrincipal);
+		
+		Border border = BorderFactory.createLineBorder(Color.RED, 2);
 		
 		JLabel jugadasLabel = new JLabel("Jugadas");
 		add(jugadasLabel);
