@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import uniandes.dpoo.taller4.modelo.Tablero;
+
 @SuppressWarnings("serial")
 public class VentanaPrincipal extends JFrame implements ActionListener
 {
@@ -12,6 +14,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	 * 
 	 * @param args
 	 */
+	
+	
 	public static void main(String[] args)
 	{
 		new VentanaPrincipal();
@@ -38,9 +42,12 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	JRadioButton hard;
 	
 	JComboBox<String> cb;
+	Integer size = 4;
 	
 	public VentanaPrincipal()
 	{
+		Tablero tablero = new Tablero(size);
+		
 		setLayout(new BorderLayout());
 		pack();
 		setTitle("Lights Out");
@@ -131,34 +138,40 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		
 		else if (e.getSource() == cb)
 		{
-			String size = (String) cb.getSelectedItem();
-			if (size.equals("4x4"))
+			String selectedSize = (String) cb.getSelectedItem();
+			if (selectedSize.equals("4x4"))
 			{
+				size = 4;
 				System.out.println("El tablero es 4x4");
 			}
 			
-			else if (size.equals("5x5"))
+			else if (selectedSize.equals("5x5"))
 			{
+				size = 5;
 				System.out.println("El tablero es 5x5");
 			}
 			
-			else if (size.equals("6x6"))
+			else if (selectedSize.equals("6x6"))
 			{
+				size = 6;
 				System.out.println("El tablero es 6x6");
 			}
 			
-			else if (size.equals("7x7"))
+			else if (selectedSize.equals("7x7"))
 			{
+				size = 7;
 				System.out.println("El tablero es 7x7");
 			}
 			
-			else if (size.equals("8x8"))
+			else if (selectedSize.equals("8x8"))
 			{
+				size = 8;
 				System.out.println("El tablero es 8x8");
 			}
 			
-			else if (size.equals("9x9"))
+			else if (selectedSize.equals("9x9"))
 			{
+				size = 9;
 				System.out.println("El tablero es 9x9");
 			}
 			
