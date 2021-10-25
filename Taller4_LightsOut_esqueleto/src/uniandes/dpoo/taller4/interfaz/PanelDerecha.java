@@ -3,6 +3,7 @@ package uniandes.dpoo.taller4.interfaz;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -21,7 +22,7 @@ public class PanelDerecha extends JPanel{
 	{
 		
 		this.padre = padre;
-		
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		JButton Nuevo = new JButton("NUEVO");//TODO: Solo se puede uno al mismo tiempo.
 		JButton Reiniciar = new JButton("REINICIAR");
