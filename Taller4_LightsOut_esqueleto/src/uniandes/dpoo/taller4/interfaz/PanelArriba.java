@@ -62,9 +62,9 @@ public class PanelArriba extends JPanel
 		
 		
 		
-		easy = new JRadioButton("Fácil");//TODO: Solo se puede uno al mismo tiempo.
-		medium = new JRadioButton("Medio");
-		hard = new JRadioButton("Difícil");
+		easy = new JRadioButton("Fácil", true); //Default es fácil
+		medium = new JRadioButton("Medio", false);
+		hard = new JRadioButton("Difícil", false);
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(easy);

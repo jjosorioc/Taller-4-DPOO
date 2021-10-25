@@ -5,6 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import uniandes.dpoo.taller4.modelo.Tablero;
+import uniandes.dpoo.taller4.modelo.Top10;
 
 @SuppressWarnings("serial")
 public class VentanaPrincipal extends JFrame implements ActionListener
@@ -44,6 +45,10 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	JComboBox<String> cb;
 	Integer size = 4;
 	
+	
+	Top10Ventana ventanaTop10;
+	Top10 top10;
+	
 	public VentanaPrincipal()
 	{
 		Tablero tablero = new Tablero(size);
@@ -56,6 +61,9 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		setResizable(true);
 		
 		setSize(800,700);
+		
+		top10 = new Top10();
+		ventanaTop10 = new Top10Ventana(top10);
 		
 		// Panel de arriba
 		elDeArriba = new PanelArriba(this);
@@ -111,6 +119,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		else if (e.getSource() == Top_10)
 		{
 			System.out.println("TOP 10");
+			ventanaTop10.changeVisibility();
 		}
 		
 		else if (e.getSource() == CambiarJugador)
