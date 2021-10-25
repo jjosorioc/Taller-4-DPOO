@@ -41,6 +41,9 @@ public class VentanaPrincipal extends JFrame
 		PanelAbajo elDeAbajo = new PanelAbajo(this);
 		add(elDeAbajo, BorderLayout.SOUTH);
 		
+		PanelDerecha elDeLaDerecha = new PanelDerecha(this);
+		add(elDeLaDerecha,BorderLayout.EAST);
+		
 		setVisible(true);
 	}
 
