@@ -1,10 +1,11 @@
 package uniandes.dpoo.taller4.interfaz;
 
-import javax.swing.JFrame;
 import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class VentanaPrincipal extends JFrame
+public class VentanaPrincipal extends JFrame implements ActionListener
 {
 	/**
 	 * Empieza la ejecución de la aplicación
@@ -22,6 +23,20 @@ public class VentanaPrincipal extends JFrame
 	 * s
 	 */
 	
+	PanelArriba elDeArriba;
+	PanelAbajo elDeAbajo;
+	PanelDerecha elDeLaDerecha;
+	TableroPanel izquierda;
+	
+	JButton Nuevo;
+	JButton Reiniciar;
+	JButton Top_10;
+	JButton CambiarJugador;
+	
+	JRadioButton easy;
+	JRadioButton medium;
+	JRadioButton hard;
+	
 	public VentanaPrincipal()
 	{
 		setLayout(new BorderLayout());
@@ -34,22 +49,83 @@ public class VentanaPrincipal extends JFrame
 		setSize(800,700);
 		
 		// Panel de arriba
-		PanelArriba elDeArriba = new PanelArriba(this);
-		
+		elDeArriba = new PanelArriba(this);
 		add(elDeArriba, BorderLayout.NORTH);
 		
-		PanelAbajo elDeAbajo = new PanelAbajo(this);
+		elDeAbajo = new PanelAbajo(this);
 		add(elDeAbajo, BorderLayout.SOUTH);
 		
-		PanelDerecha elDeLaDerecha = new PanelDerecha(this);
+		elDeLaDerecha = new PanelDerecha(this);
 		add(elDeLaDerecha,BorderLayout.EAST);
 		
-		TableroPanel izquierda = new TableroPanel(this);
+		izquierda = new TableroPanel(this);
 		
 		add(izquierda, BorderLayout.CENTER);
 		
 		setLocationRelativeTo(null);
 		setVisible(true);
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
+		//Botones panel de la derecha 
+		
+		Nuevo = elDeLaDerecha.Nuevo;
+		Reiniciar = elDeLaDerecha.Reiniciar;
+		Top_10 = elDeLaDerecha.Top_10;
+		CambiarJugador = elDeLaDerecha.CambiarJugador;
+		
+		//Botones panel de arriba
+		
+		easy = elDeArriba.easy;
+		medium = elDeArriba.medium;
+		hard = elDeArriba.hard;
+		
+		//Panel de la derecha
+		
+		if (e.getSource() == Nuevo)
+		{
+			System.out.println("NUEVO");
+		}
+		
+		else if (e.getSource() == Reiniciar)
+		{
+			System.out.println("REINICIAR");
+		}
+		
+		else if (e.getSource() == Top_10)
+		{
+			System.out.println("TOP 10");
+		}
+		
+		else if (e.getSource() == CambiarJugador)
+		{
+			System.out.println("CAMBIAR JUGADOR");
+		}
+		
+		//Panel de arriba
+		
+		
+		else if (e.getSource() == easy)
+		{
+			System.out.println("Easy bitch");
+		}
+		
+		else if (e.getSource() == medium)
+		{
+			System.out.println("Medium");
+		}
+		
+		else if (e.getSource() == hard)
+		{
+			System.out.println("hard :)");
+		}
+		
+		
 	}
 
 }

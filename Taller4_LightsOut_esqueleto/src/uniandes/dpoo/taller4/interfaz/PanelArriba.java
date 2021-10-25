@@ -10,11 +10,17 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
+import java.awt.event.*;
+
 
 @SuppressWarnings("serial")
 public class PanelArriba extends JPanel
 {
 	private VentanaPrincipal padre; // I am your father.
+	
+	JRadioButton easy;
+	JRadioButton medium;
+	JRadioButton hard;
 	
 	public PanelArriba(VentanaPrincipal padre)
 	{
@@ -52,14 +58,23 @@ public class PanelArriba extends JPanel
 		
 		
 		
-		JRadioButton easy = new JRadioButton("Fácil", true);//TODO: Solo se puede uno al mismo tiempo.
-		JRadioButton medium = new JRadioButton("Medio", false);
-		JRadioButton hard = new JRadioButton("Difícil", false);
+		easy = new JRadioButton("Fácil");//TODO: Solo se puede uno al mismo tiempo.
+		medium = new JRadioButton("Medio");
+		hard = new JRadioButton("Difícil");
+		
+		ButtonGroup group = new ButtonGroup();
+		group.add(easy);
+		group.add(medium);
+		group.add(hard);
+		
+		easy.addActionListener(padre);
+		medium.addActionListener(padre);
+		hard.addActionListener(padre);
+		
 		
 		this.add(easy);
 		this.add(medium);
 		this.add(hard);
-		
 	}
 	//TODO
 }

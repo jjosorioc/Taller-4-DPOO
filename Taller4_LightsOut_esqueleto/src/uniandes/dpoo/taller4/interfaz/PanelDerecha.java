@@ -1,6 +1,7 @@
 package uniandes.dpoo.taller4.interfaz;
 
 import java.awt.BorderLayout;
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
@@ -16,10 +17,18 @@ import javax.swing.JTable;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class PanelDerecha extends JPanel{
 	
 	private VentanaPrincipal padre;
+	
+	JButton Nuevo;
+	JButton Reiniciar;
+	JButton Top_10;
+	JButton CambiarJugador;
 	
 	public PanelDerecha (VentanaPrincipal padre)
 	{
@@ -31,10 +40,15 @@ public class PanelDerecha extends JPanel{
 		Border border = BorderFactory.createTitledBorder("Menú");
 		this.setBorder(border);
 		
-		JButton Nuevo = new JButton("NUEVO");
-		JButton Reiniciar = new JButton("REINICIAR");
-		JButton Top_10 = new JButton("TOP 10");
-		JButton CambiarJugador = new JButton("CAMBIAR JUGADOR");
+		Nuevo = new JButton("NUEVO");
+		Reiniciar = new JButton("REINICIAR");
+		Top_10 = new JButton("TOP 10");
+		CambiarJugador = new JButton("CAMBIAR JUGADOR");
+		
+		Nuevo.addActionListener(padre);
+		Reiniciar.addActionListener(padre);
+		Top_10.addActionListener(padre);
+		CambiarJugador.addActionListener(padre);
 		
 		this.add(Nuevo);
 		this.add(Reiniciar);
