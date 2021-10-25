@@ -22,6 +22,8 @@ public class PanelArriba extends JPanel
 	JRadioButton medium;
 	JRadioButton hard;
 	
+	JComboBox<String> cb;
+	
 	public PanelArriba(VentanaPrincipal padre)
 	{
 		
@@ -46,9 +48,11 @@ public class PanelArriba extends JPanel
 				"9x9"
 		};
 		
-		final JComboBox<String> cb = new JComboBox<String>(opciones);
+		cb = new JComboBox<String>(opciones);
 		cb.setMaximumSize(getPreferredSize());
 		cb.setAlignmentX(LEFT_ALIGNMENT);
+		
+		cb.addActionListener(padre);
 		
 		this.add(cb);
 		

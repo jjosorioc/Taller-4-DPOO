@@ -37,6 +37,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	JRadioButton medium;
 	JRadioButton hard;
 	
+	JComboBox<String> cb;
+	
 	public VentanaPrincipal()
 	{
 		setLayout(new BorderLayout());
@@ -85,6 +87,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		medium = elDeArriba.medium;
 		hard = elDeArriba.hard;
 		
+		cb = elDeArriba.cb;
+		
 		//Panel de la derecha
 		
 		if (e.getSource() == Nuevo)
@@ -123,6 +127,41 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		else if (e.getSource() == hard)
 		{
 			System.out.println("hard :)");
+		}
+		
+		else if (e.getSource() == cb)
+		{
+			String size = (String) cb.getSelectedItem();
+			if (size.equals("4x4"))
+			{
+				System.out.println("El tablero es 4x4");
+			}
+			
+			else if (size.equals("5x5"))
+			{
+				System.out.println("El tablero es 5x5");
+			}
+			
+			else if (size.equals("6x6"))
+			{
+				System.out.println("El tablero es 6x6");
+			}
+			
+			else if (size.equals("7x7"))
+			{
+				System.out.println("El tablero es 7x7");
+			}
+			
+			else if (size.equals("8x8"))
+			{
+				System.out.println("El tablero es 8x8");
+			}
+			
+			else if (size.equals("9x9"))
+			{
+				System.out.println("El tablero es 9x9");
+			}
+			
 		}
 		
 		
