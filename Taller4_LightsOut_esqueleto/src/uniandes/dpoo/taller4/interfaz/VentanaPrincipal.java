@@ -12,6 +12,7 @@ import java.io.UnsupportedEncodingException;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
 import uniandes.dpoo.taller4.modelo.Tablero;
@@ -53,6 +54,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 	Top10Ventana ventanaTop10;
 	Top10 top10;
+	JLabel cantidadJugadas;
 
 	/*
 	 * CONSTRUCTOR
@@ -132,9 +134,11 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	
 	public void nuevoJuego()
 	{
+		elDeAbajo.cantidadJugadas.setText("0");
 		tablero = new Tablero(size);
 		tablero.desordenar(dificultad);
 		izquierda.nuevoPanel(tablero);
+		
 	}
 	
 	/**
@@ -183,24 +187,24 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 		if (e.getSource() == Nuevo)
 		{
-			System.out.println("NUEVO");
+			nuevoJuego();
 		}
 
 		else if (e.getSource() == Reiniciar)
 		{
-			System.out.println("REINICIAR");
-			nuevoJuego();
+			tablero.reiniciar();
+			izquierda.nuevoPanel(tablero);
+			elDeAbajo.cantidadJugadas.setText("0");
 		}
 
 		else if (e.getSource() == Top_10)
 		{
-			System.out.println("TOP 10");
 			ventanaTop10.changeVisibility();
 		}
 
 		else if (e.getSource() == CambiarJugador)
 		{
-			System.out.println("CAMBIAR JUGADOR");
+			System.out.println("CAMBIAR JUGADOR"); //TODO :)
 		}
 
 		// Panel de arriba
@@ -209,21 +213,18 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		{
 			dificultad = 3;
 			nuevoJuego();
-			System.out.println("Easy bitch");
 		}
 
 		else if (e.getSource() == medium)
 		{
 			dificultad = 5;
 			nuevoJuego();
-			System.out.println("Medium");
 		}
 
 		else if (e.getSource() == hard)
 		{
 			dificultad = 7;
 			nuevoJuego();
-			System.out.println("hard :)");
 		}
 
 		else if (e.getSource() == cb)
@@ -233,42 +234,36 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 			{
 				size = 4;
 				nuevoJuego();
-				System.out.println("El tablero es 4x4");
 			}
 
 			else if (selectedSize.equals("5x5"))
 			{
 				size = 5;
 				nuevoJuego();
-				System.out.println("El tablero es 5x5");
 			}
 
 			else if (selectedSize.equals("6x6"))
 			{
 				size = 6;
 				nuevoJuego();
-				System.out.println("El tablero es 6x6");
 			}
 
 			else if (selectedSize.equals("7x7"))
 			{
 				size = 7;
 				nuevoJuego();
-				System.out.println("El tablero es 7x7");
 			}
 
 			else if (selectedSize.equals("8x8"))
 			{
 				size = 8;
 				nuevoJuego();
-				System.out.println("El tablero es 8x8");
 			}
 
 			else if (selectedSize.equals("9x9"))
 			{
-				nuevoJuego();
 				size = 9;
-				System.out.println("El tablero es 9x9");
+				nuevoJuego();
 			}
 
 		}
@@ -278,6 +273,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	public void Jugar(int i, int j) 
 	{
 		tablero.jugar(i,j);
+		Integer cantidad = izquierda.cantidadJugadas;
+		elDeAbajo.cantidadJugadas.setText(cantidad.toString());
 		
 	}
 

@@ -12,6 +12,8 @@ import javax.swing.border.Border;
 public class PanelAbajo extends JPanel
 {
 	private VentanaPrincipal padre; // I am your father.
+	
+	JLabel cantidadJugadas;
 
 	public PanelAbajo(VentanaPrincipal padre)
 	{
@@ -27,7 +29,7 @@ public class PanelAbajo extends JPanel
 
 		JLabel jugadasLabel = new JLabel("Jugadas");
 		add(jugadasLabel);
-		JLabel cantidadJugadas = new JLabel("0");
+		cantidadJugadas = new JLabel("0");
 		cantidadJugadas.setBorder(border);
 		add(cantidadJugadas);
 

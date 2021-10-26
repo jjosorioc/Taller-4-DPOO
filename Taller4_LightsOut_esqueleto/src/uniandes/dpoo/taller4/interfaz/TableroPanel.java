@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import uniandes.dpoo.taller4.modelo.Tablero;
@@ -20,6 +21,7 @@ public class TableroPanel extends JPanel implements MouseListener
     private int[][] cantidades;
     private int largo;
     private boolean[][] tablero;
+    public int cantidadJugadas;
 
 
 
@@ -34,6 +36,7 @@ public class TableroPanel extends JPanel implements MouseListener
         this.tablero = tableroC.darTablero();
         this.largo = tablero.length;
         this.cantidades = new int[largo][largo];
+        cantidadJugadas = 1;
         GridLayout gl = new GridLayout(largo,largo);
         setLayout(gl);
 
@@ -80,6 +83,8 @@ public class TableroPanel extends JPanel implements MouseListener
 
          cantidades[casilla[0]][casilla[1]]++;
          padre.Jugar(casilla[0], casilla[1]);
+         cantidadJugadas +=1;
+         
          repaint();
     }
 
