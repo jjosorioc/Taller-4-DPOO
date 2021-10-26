@@ -2,6 +2,8 @@ package uniandes.dpoo.taller4.interfaz;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+
 import javax.swing.*;
 
 import uniandes.dpoo.taller4.modelo.Tablero;
@@ -62,7 +64,14 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		
 		setSize(800,700);
 		
+		
+		/*
+		 * Se cargan los top 10
+		 * 
+		 * luego se crea la ventana de los top 10
+		 */
 		top10 = new Top10();
+		this.cargarTop10();
 		ventanaTop10 = new Top10Ventana(top10);
 		
 		// Panel de arriba
@@ -84,6 +93,17 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		
 		
 	}
+	
+	/**
+	 * Se cargan los top 10 del archivo en data.
+	 */
+	public void cargarTop10()
+	{
+		String dataDirectory =  System.getProperty("user.dir") + "/data/top10.csv";
+		File archivoFile = new File(dataDirectory);
+		top10.cargarRecords(archivoFile);
+	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

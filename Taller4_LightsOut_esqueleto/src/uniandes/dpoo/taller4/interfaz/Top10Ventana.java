@@ -1,6 +1,7 @@
 package uniandes.dpoo.taller4.interfaz;
 
 import javax.swing.BoxLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -8,14 +9,22 @@ import javax.swing.JPanel;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.*;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
+import java.io.File;
 
 import uniandes.dpoo.taller4.modelo.RegistroTop10;
 import uniandes.dpoo.taller4.modelo.Top10;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 @SuppressWarnings("serial")
-public class Top10Ventana extends JFrame
+public class Top10Ventana extends JFrame implements ActionListener
 {
 	Top10 losTop10 = null;
 	
@@ -29,6 +38,17 @@ public class Top10Ventana extends JFrame
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		
 		setSize(300, 500);
+		
+		/*
+		 * Window listener para cuando se cierre la ventana.
+		 */
+		addWindowListener(new WindowAdapter()
+				{
+					public void windowClosing(WindowEvent e)
+					{
+						changeVisibility(); // se cambia a falso para que no toque espichar el botón dos veces
+					}
+				});
 
 		
 		
@@ -80,7 +100,16 @@ public class Top10Ventana extends JFrame
 		this.esVisible = !esVisible;
 		this.setVisible(esVisible);
 	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		// TODO Auto-generated method stub
+		
+	}
 	
+
 	//TODO si la ventana se cierra entonces cambiar esVisible a false;
 	
 	
