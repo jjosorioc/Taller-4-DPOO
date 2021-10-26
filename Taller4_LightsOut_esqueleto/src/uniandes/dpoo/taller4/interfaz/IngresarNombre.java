@@ -6,6 +6,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.formdev.flatlaf.FlatLightLaf;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -65,7 +67,7 @@ public class IngresarNombre extends JFrame implements ActionListener
 	
 	public static void main(String[] args)
 	{
-		
+		FlatLightLaf.install();
 		new IngresarNombre();
 		
 	}

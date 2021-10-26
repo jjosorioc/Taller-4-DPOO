@@ -44,7 +44,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 	JComboBox<String> cb;
 	Integer size = 4;
-	Integer dificultad = 1;
+	Integer dificultad = 1; //TODO: Ajustar dificultad antes de la última entrega
 
 	Top10Ventana ventanaTop10;
 	static Top10 top10;
@@ -189,7 +189,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 		else if (e.getSource() == Reiniciar)
 		{
-			this.dispose();
 			tablero.reiniciar();
 			izquierda.nuevoPanel(tablero);
 			elDeAbajo.cantidadJugadas.setText("0");
