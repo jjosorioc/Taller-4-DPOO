@@ -56,6 +56,7 @@ public class VentanaFinal extends JFrame implements ActionListener
 		setSize(300, 300);
         setLocationRelativeTo(null);
         setResizable(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         setVisible(true);
 	}

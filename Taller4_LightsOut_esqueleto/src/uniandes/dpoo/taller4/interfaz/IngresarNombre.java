@@ -1,5 +1,6 @@
 package uniandes.dpoo.taller4.interfaz;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -10,6 +11,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -35,8 +37,12 @@ public class IngresarNombre extends JFrame implements ActionListener
  
         // create a panel to add buttons and textfield
         JPanel p = new JPanel();
+        JLabel imagen = new JLabel();
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon("./data/logo.jpeg").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        imagen.setIcon(imageIcon);
  
         // add buttons and textfield to panel
+        p.add (imagen);
         p.add(l);
         p.add(t);
         p.add(b);
@@ -49,6 +55,7 @@ public class IngresarNombre extends JFrame implements ActionListener
         setSize(300, 300);
         setLocationRelativeTo(null);
         setResizable(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         setVisible(true);
 	}
