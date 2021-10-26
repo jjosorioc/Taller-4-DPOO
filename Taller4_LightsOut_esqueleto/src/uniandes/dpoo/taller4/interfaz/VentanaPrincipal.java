@@ -27,7 +27,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	 * 
 	 * @param args
 	 */
-	
+
 	PanelArriba elDeArriba;
 	PanelAbajo elDeAbajo;
 	PanelDerecha elDeLaDerecha;
@@ -44,12 +44,11 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 	JComboBox<String> cb;
 	Integer size = 4;
-	Integer dificultad = 1; //TODO: Ajustar dificultad antes de la última entrega
+	Integer dificultad = 1; // TODO: Ajustar dificultad antes de la última entrega
 
 	Top10Ventana ventanaTop10;
 	static Top10 top10;
 	JLabel cantidadJugadas;
-		
 
 	/*
 	 * CONSTRUCTOR
@@ -111,33 +110,33 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		izquierda = new TableroPanel(this);
 
 		add(izquierda, BorderLayout.CENTER);
-		
-		int PanelX = (getWidth() - izquierda.getWidth() - getInsets().left - getInsets().right)/2;
-		int PanelY = (getHeight() - izquierda.getHeight() - getInsets().top - getInsets().bottom)/2;
-		
+
+		int PanelX = (getWidth() - izquierda.getWidth() - getInsets().left - getInsets().right) / 2;
+		int PanelY = (getHeight() - izquierda.getHeight() - getInsets().top - getInsets().bottom) / 2;
+
 		izquierda.setLocation(PanelX, PanelY);
 
 		setLocationRelativeTo(null);
 		setVisible(true);
-		
+
 		nuevoJuego();
 
 	}
-	
+
 	/**
 	 * Se inicia un nuevo juego.
 	 */
-	
+
 	public void nuevoJuego()
 	{
-		
+
 		elDeAbajo.cantidadJugadas.setText("0");
 		tablero = new Tablero(size);
 		tablero.desordenar(dificultad);
 		izquierda.nuevoPanel(tablero);
-		
+
 	}
-	
+
 	/**
 	 * Se cargan los top 10 del archivo en data.
 	 */
@@ -154,6 +153,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	 * @throws FileNotFoundException
 	 * @throws UnsupportedEncodingException
 	 */
+	@SuppressWarnings("static-access")
 	public void salvarTop10() throws FileNotFoundException, UnsupportedEncodingException
 	{
 		String dataDirectory = System.getProperty("user.dir") + "/data/top10.csv";
@@ -267,25 +267,24 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 	}
 
-	public void Jugar(int i, int j) 
+	public void Jugar(int i, int j)
 	{
-		tablero.jugar(i,j);
+		tablero.jugar(i, j);
 		Integer cantidad = izquierda.cantidadJugadas;
 		elDeAbajo.cantidadJugadas.setText(cantidad.toString());
-		
+
 		int puntaje = tablero.calcularPuntaje();
 		int jugadas = Integer.parseInt(elDeAbajo.cantidadJugadas.getText());
-		
+
 		if (tablero.tableroIluminado() == true)
-		{	
+		{
 			if (top10.esTop10(puntaje))
 			{
 				top10.agregarRegistro(elDeAbajo.nombreJugador.getText(), puntaje);
 			}
 			new VentanaFinal(jugadas, puntaje, this);
 		}
-				
-		
+
 	}
 
 }
