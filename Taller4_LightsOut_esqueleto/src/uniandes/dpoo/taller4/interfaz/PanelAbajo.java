@@ -14,6 +14,7 @@ public class PanelAbajo extends JPanel
 	private VentanaPrincipal padre; // I am your father.
 	
 	JLabel cantidadJugadas;
+	JLabel nombreJugador;
 
 	public PanelAbajo(VentanaPrincipal padre)
 	{
@@ -35,7 +36,7 @@ public class PanelAbajo extends JPanel
 
 		JLabel jugadorLabel = new JLabel("Jugador");
 		add(jugadorLabel);
-		JLabel nombreJugador = new JLabel("Null");
+		nombreJugador = new JLabel("Null");
 		nombreJugador.setBorder(border);
 		add(nombreJugador);
 	}

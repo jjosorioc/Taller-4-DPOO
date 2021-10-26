@@ -27,13 +27,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	 * 
 	 * @param args
 	 */
-
-	public static void main(String[] args)
-	{
-		new VentanaPrincipal();
-
-	}
-
+	
 	PanelArriba elDeArriba;
 	PanelAbajo elDeAbajo;
 	PanelDerecha elDeLaDerecha;
@@ -55,6 +49,18 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	Top10Ventana ventanaTop10;
 	Top10 top10;
 	JLabel cantidadJugadas;
+	String nombreJugador = "";
+	static IngresarNombre ingresarNombre;
+	
+
+	public static void main(String[] args)
+	{
+		ingresarNombre = new IngresarNombre();
+		new VentanaPrincipal();
+		
+	}
+
+	
 
 	/*
 	 * CONSTRUCTOR
@@ -134,6 +140,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	
 	public void nuevoJuego()
 	{
+		
 		elDeAbajo.cantidadJugadas.setText("0");
 		tablero = new Tablero(size);
 		tablero.desordenar(dificultad);
