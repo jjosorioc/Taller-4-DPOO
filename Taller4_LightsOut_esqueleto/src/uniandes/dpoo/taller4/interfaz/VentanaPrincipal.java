@@ -20,6 +20,7 @@ import uniandes.dpoo.taller4.modelo.Top10;
 @SuppressWarnings("serial")
 public class VentanaPrincipal extends JFrame implements ActionListener
 {
+	private Tablero tablero;
 	/**
 	 * Empieza la ejecución de la aplicación
 	 * 
@@ -57,7 +58,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	 */
 	public VentanaPrincipal()
 	{
-		Tablero tablero = new Tablero(size);
 
 		setLayout(new BorderLayout());
 		pack();
@@ -112,12 +112,30 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		izquierda = new TableroPanel(this);
 
 		add(izquierda, BorderLayout.CENTER);
+		
+		int PanelX = (getWidth() - izquierda.getWidth() - getInsets().left - getInsets().right)/2;
+		int PanelY = (getHeight() - izquierda.getHeight() - getInsets().top - getInsets().bottom)/2;
+		
+		izquierda.setLocation(PanelX, PanelY);
 
 		setLocationRelativeTo(null);
 		setVisible(true);
+		
+		nuevoJuego();
 
 	}
-
+	
+	/**
+	 * Se inicia un nuevo juego.
+	 */
+	
+	public void nuevoJuego()
+	{
+		tablero = new Tablero(size);
+		tablero.desordenar(5);
+		izquierda.nuevoPanel(tablero);
+	}
+	
 	/**
 	 * Se cargan los top 10 del archivo en data.
 	 */
@@ -241,6 +259,12 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 		}
 
+	}
+
+	public void Jugar(int i, int j) 
+	{
+		tablero.jugar(i,j);
+		
 	}
 
 }
