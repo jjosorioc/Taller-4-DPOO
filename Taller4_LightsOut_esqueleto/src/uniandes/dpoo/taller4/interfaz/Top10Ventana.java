@@ -1,14 +1,20 @@
 package uniandes.dpoo.taller4.interfaz;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
+import javax.swing.text.AttributeSet.ColorAttribute;
 
 import uniandes.dpoo.taller4.modelo.RegistroTop10;
 import uniandes.dpoo.taller4.modelo.Top10;
@@ -40,8 +46,8 @@ public class Top10Ventana extends JFrame
 		});
 
 		JPanel panel = new JPanel();
-
-		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		//TODO hacer panel para el HEADER
+		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 
 		// Header
 		JLabel header = new JLabel("#   Nombre");
@@ -65,12 +71,26 @@ public class Top10Ventana extends JFrame
 
 		String[] arrayLista = lista10.split(",");
 
+		
+		// Lista (JList)
 		JList<String> listaTop10 = new JList<String>(arrayLista);
-		panel.add(listaTop10, BoxLayout.Y_AXIS);
+		listaTop10.setVisibleRowCount(10);
+		DefaultListCellRenderer renderer = (DefaultListCellRenderer) listaTop10.getCellRenderer();
+		renderer.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		
+		//renderer.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+		
+		listaTop10.setFixedCellHeight(50);
+		
+		
+		JScrollPane scrollPane = new JScrollPane(listaTop10);
+		scrollPane.setPreferredSize(new Dimension(300, 300));
+		panel.add(scrollPane);
 
 		add(panel);
 		setLocationRelativeTo(null);
-		setVisible(esVisible); // Inicialmente no se debe poder ver
+		setVisible(true); // Inicialmente no se debe poder ver
 		this.revalidate();
 	}
 
