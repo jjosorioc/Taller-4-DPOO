@@ -273,6 +273,12 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		Integer cantidad = izquierda.cantidadJugadas;
 		elDeAbajo.cantidadJugadas.setText(cantidad.toString());
 		
+		if (tablero.tableroIluminado() == true)
+		{	
+			new VentanaFinal(3,4);
+		}
+				
+		
 	}
 
 }
