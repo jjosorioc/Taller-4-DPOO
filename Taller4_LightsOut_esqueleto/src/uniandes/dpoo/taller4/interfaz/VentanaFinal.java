@@ -72,7 +72,6 @@ public class VentanaFinal extends JFrame implements ActionListener
 				this.ventana.salvarTop10();
 			} catch (FileNotFoundException | UnsupportedEncodingException e1)
 			{
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			this.ventana.dispose();
@@ -84,7 +83,6 @@ public class VentanaFinal extends JFrame implements ActionListener
 				this.ventana.salvarTop10();
 			} catch (FileNotFoundException | UnsupportedEncodingException e1)
 			{
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			System.exit(0);

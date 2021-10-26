@@ -66,5 +66,5 @@ public class PanelArriba extends JPanel
 		this.add(medium);
 		this.add(hard);
 	}
-	// TODO
+
 }
