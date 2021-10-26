@@ -1,13 +1,21 @@
 package uniandes.dpoo.taller4.interfaz;
 
 import java.awt.*;
+
 import java.awt.event.*;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 import javax.swing.*;
 
 import uniandes.dpoo.taller4.modelo.Tablero;
 import uniandes.dpoo.taller4.modelo.Top10;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 @SuppressWarnings("serial")
 public class VentanaPrincipal extends JFrame implements ActionListener
@@ -64,6 +72,28 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		
 		setSize(800,700);
 		
+		/*
+		 * Window listener para cuando se cierre la ventana.
+		 */
+		addWindowListener(new WindowAdapter()
+				{
+					public void windowClosing(WindowEvent e)
+					{
+						try
+						{
+							salvarTop10();
+						} catch (FileNotFoundException e1)
+						{
+							System.err.println("\nNo se encontró el archvio.\n");
+							e1.printStackTrace();
+						} catch (UnsupportedEncodingException e1)
+						{
+							System.err.println("\nUnsupportedEncoding!\n");
+							e1.printStackTrace();
+						} 
+					}
+				});
+		
 		
 		/*
 		 * Se cargan los top 10
@@ -102,6 +132,18 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		String dataDirectory =  System.getProperty("user.dir") + "/data/top10.csv";
 		File archivoFile = new File(dataDirectory);
 		top10.cargarRecords(archivoFile);
+	}
+	
+	/**
+	 * Se guarda el top10 en el CSV.
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
+	public void salvarTop10() throws FileNotFoundException, UnsupportedEncodingException
+	{
+		String dataDirectory =  System.getProperty("user.dir") + "/data/top10.csv";
+		File archivoFile = new File(dataDirectory);
+		this.top10.salvarRecords(archivoFile);
 	}
 	
 
