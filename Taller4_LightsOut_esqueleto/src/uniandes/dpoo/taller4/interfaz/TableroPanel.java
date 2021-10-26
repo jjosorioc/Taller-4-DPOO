@@ -52,11 +52,11 @@ public class TableroPanel extends JPanel implements MouseListener
                 GradientPaint gp;
                 Color colorT;
                 if (tablero[i][ii]) {
-                    gp = new GradientPaint(disx, disy, new java.awt.Color(113, 164, 201), disx + la, disy + la, Color.WHITE);
+                    gp = new GradientPaint(disx, disy, Color.YELLOW, disx + la, disy + la, Color.ORANGE);
                     colorT = Color.BLACK;
                 }else{
-                    gp = new GradientPaint(disx, disy, Color.GRAY, disx + la, disy + la, new java.awt.Color(25, 40, 50));
-                    colorT = Color.green;
+                    gp = new GradientPaint(disx, disy, Color.BLUE, disx + la, disy + la, Color.BLACK);
+                    colorT = Color.WHITE;
                 }
 
                 g2d.setPaint(gp);

@@ -49,6 +49,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 	JComboBox<String> cb;
 	Integer size = 4;
+	Integer dificultad = 3;
 
 	Top10Ventana ventanaTop10;
 	Top10 top10;
@@ -58,7 +59,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	 */
 	public VentanaPrincipal()
 	{
-
+		tablero = new Tablero(size);
 		setLayout(new BorderLayout());
 		pack();
 		setTitle("Lights Out");
@@ -132,7 +133,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	public void nuevoJuego()
 	{
 		tablero = new Tablero(size);
-		tablero.desordenar(5);
+		tablero.desordenar(dificultad);
 		izquierda.nuevoPanel(tablero);
 	}
 	
@@ -188,6 +189,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		else if (e.getSource() == Reiniciar)
 		{
 			System.out.println("REINICIAR");
+			nuevoJuego();
 		}
 
 		else if (e.getSource() == Top_10)
@@ -205,16 +207,22 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 		else if (e.getSource() == easy)
 		{
+			dificultad = 3;
+			nuevoJuego();
 			System.out.println("Easy bitch");
 		}
 
 		else if (e.getSource() == medium)
 		{
+			dificultad = 5;
+			nuevoJuego();
 			System.out.println("Medium");
 		}
 
 		else if (e.getSource() == hard)
 		{
+			dificultad = 7;
+			nuevoJuego();
 			System.out.println("hard :)");
 		}
 
@@ -224,35 +232,41 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 			if (selectedSize.equals("4x4"))
 			{
 				size = 4;
+				nuevoJuego();
 				System.out.println("El tablero es 4x4");
 			}
 
 			else if (selectedSize.equals("5x5"))
 			{
 				size = 5;
+				nuevoJuego();
 				System.out.println("El tablero es 5x5");
 			}
 
 			else if (selectedSize.equals("6x6"))
 			{
 				size = 6;
+				nuevoJuego();
 				System.out.println("El tablero es 6x6");
 			}
 
 			else if (selectedSize.equals("7x7"))
 			{
 				size = 7;
+				nuevoJuego();
 				System.out.println("El tablero es 7x7");
 			}
 
 			else if (selectedSize.equals("8x8"))
 			{
 				size = 8;
+				nuevoJuego();
 				System.out.println("El tablero es 8x8");
 			}
 
 			else if (selectedSize.equals("9x9"))
 			{
+				nuevoJuego();
 				size = 9;
 				System.out.println("El tablero es 9x9");
 			}
