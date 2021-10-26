@@ -22,6 +22,7 @@ public class IngresarNombre extends JFrame implements ActionListener
 
 	public IngresarNombre()
 	{
+		this.setTitle("Sign in!");
 		// create a label to display text
 		JLabel l = new JLabel("Ingrese su nombre para iniciar el juego! :)");
 
