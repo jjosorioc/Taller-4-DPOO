@@ -49,23 +49,12 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	Top10Ventana ventanaTop10;
 	Top10 top10;
 	JLabel cantidadJugadas;
-	String nombreJugador = "";
-	static IngresarNombre ingresarNombre;
-	
-
-	public static void main(String[] args)
-	{
-		ingresarNombre = new IngresarNombre();
-		new VentanaPrincipal();
 		
-	}
-
-	
 
 	/*
 	 * CONSTRUCTOR
 	 */
-	public VentanaPrincipal()
+	public VentanaPrincipal(String nombreJugador)
 	{
 		tablero = new Tablero(size);
 		setLayout(new BorderLayout());
@@ -113,6 +102,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		add(elDeArriba, BorderLayout.NORTH);
 
 		elDeAbajo = new PanelAbajo(this);
+		elDeAbajo.nombreJugador.setText(nombreJugador);
 		add(elDeAbajo, BorderLayout.SOUTH);
 
 		elDeLaDerecha = new PanelDerecha(this);
@@ -211,7 +201,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 		else if (e.getSource() == CambiarJugador)
 		{
-			System.out.println("CAMBIAR JUGADOR"); //TODO :)
+			new IngresarNombre();
 		}
 
 		// Panel de arriba

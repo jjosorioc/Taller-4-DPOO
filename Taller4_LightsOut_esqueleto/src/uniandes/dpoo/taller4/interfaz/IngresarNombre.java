@@ -57,8 +57,16 @@ public class IngresarNombre extends JFrame implements ActionListener
 		if (e.getSource() == b)
 		{
 			nombreJugador = t.getText();
+			new VentanaPrincipal(nombreJugador);
 			this.dispose();
 		}
+		
+	}
+	
+	public static void main(String[] args)
+	{
+		
+		new IngresarNombre();
 		
 	}
 	
