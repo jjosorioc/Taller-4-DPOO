@@ -4,11 +4,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListCellRenderer;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -55,13 +57,11 @@ public class Top10Ventana extends JFrame
 		headerPanel.setLayout(new GridLayout(1, 1, 0, 0));
 
 		// Header
-		JLabel header = new JLabel("#   Nombre");
-		header.setFont(new Font("Serif", Font.BOLD, 60));
-		header.setBackground(Color.blue);
-		header.setOpaque(true);
-		header.setForeground(Color.white);
-		header.setHorizontalAlignment(JLabel.CENTER);
+		JLabel header = new JLabel();
+		ImageIcon imageIcon = new ImageIcon(new ImageIcon ("./data/TOP 10.png").getImage().getScaledInstance(300, 100, Image.SCALE_DEFAULT));
+		header.setIcon(imageIcon);
 		header.setVisible(true);
+		header.setHorizontalAlignment(SwingConstants.CENTER);
 		headerPanel.add(header);
 
 		panel.add(headerPanel);
