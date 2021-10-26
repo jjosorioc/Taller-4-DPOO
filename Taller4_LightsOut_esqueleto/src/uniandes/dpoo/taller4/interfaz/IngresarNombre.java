@@ -38,7 +38,7 @@ public class IngresarNombre extends JFrame implements ActionListener
         // create a panel to add buttons and textfield
         JPanel p = new JPanel();
         JLabel imagen = new JLabel();
-        ImageIcon imageIcon = new ImageIcon(new ImageIcon("./data/logo.jpeg").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon("./data/logo.png").getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
         imagen.setIcon(imageIcon);
  
         // add buttons and textfield to panel
@@ -52,7 +52,7 @@ public class IngresarNombre extends JFrame implements ActionListener
         add(p);
  
         // set the size of frame
-        setSize(300, 300);
+        setSize(350, 350);
         setLocationRelativeTo(null);
         setResizable(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
