@@ -44,10 +44,10 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 	JComboBox<String> cb;
 	Integer size = 4;
-	Integer dificultad = 3;
+	Integer dificultad = 1;
 
 	Top10Ventana ventanaTop10;
-	Top10 top10;
+	static Top10 top10;
 	JLabel cantidadJugadas;
 		
 
@@ -189,6 +189,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 
 		else if (e.getSource() == Reiniciar)
 		{
+			this.dispose();
 			tablero.reiniciar();
 			izquierda.nuevoPanel(tablero);
 			elDeAbajo.cantidadJugadas.setText("0");
@@ -273,9 +274,16 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 		Integer cantidad = izquierda.cantidadJugadas;
 		elDeAbajo.cantidadJugadas.setText(cantidad.toString());
 		
+		int puntaje = tablero.calcularPuntaje();
+		int jugadas = Integer.parseInt(elDeAbajo.cantidadJugadas.getText());
+		
 		if (tablero.tableroIluminado() == true)
 		{	
-			new VentanaFinal(3,4);
+			if (top10.esTop10(puntaje))
+			{
+				top10.agregarRegistro(elDeAbajo.nombreJugador.getText(), puntaje);
+			}
+			new VentanaFinal(jugadas, puntaje, this);
 		}
 				
 		
