@@ -15,10 +15,10 @@ public class PanelDerecha extends JPanel
 
 	private VentanaPrincipal padre;
 
-	JButton Nuevo;
-	JButton Reiniciar;
-	JButton Top_10;
-	JButton CambiarJugador;
+	public JButton Nuevo;
+	public JButton Reiniciar;
+	public JButton Top_10;
+	public JButton CambiarJugador;
 
 	public PanelDerecha(VentanaPrincipal padre)
 	{

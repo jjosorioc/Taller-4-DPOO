@@ -20,8 +20,8 @@ import java.awt.FlowLayout;
 public class VentanaFinal extends JFrame implements ActionListener
 {
 	private VentanaPrincipal ventana;
-	JButton empezar;
-	JButton salir;
+	public JButton empezar;
+	public JButton salir;
 	
 	
 	public VentanaFinal(int jugadas, int puntaje, VentanaPrincipal ventana)

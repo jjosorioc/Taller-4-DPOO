@@ -24,9 +24,9 @@ import uniandes.dpoo.taller4.modelo.Top10;
 @SuppressWarnings("serial")
 public class Top10Ventana extends JFrame
 {
-	Top10 losTop10 = null;
+	public Top10 losTop10 = null;
 
-	boolean esVisible = false;
+	public boolean esVisible = false;
 
 	public Top10Ventana(Top10 cola)
 	{

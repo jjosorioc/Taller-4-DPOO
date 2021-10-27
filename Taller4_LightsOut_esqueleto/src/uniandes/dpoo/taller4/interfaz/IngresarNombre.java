@@ -16,9 +16,9 @@ import com.formdev.flatlaf.FlatLightLaf;
 @SuppressWarnings("serial")
 public class IngresarNombre extends JFrame implements ActionListener
 {
-	JButton b;
-	JTextField t;
-	String nombreJugador;
+	public JButton b;
+	public JTextField t;
+	public String nombreJugador;
 
 	public IngresarNombre()
 	{
@@ -53,7 +53,7 @@ public class IngresarNombre extends JFrame implements ActionListener
 		setSize(350, 350);
 		setLocationRelativeTo(null);
 		setResizable(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		setVisible(true);
 	}

@@ -15,11 +15,11 @@ public class PanelArriba extends JPanel
 {
 	private VentanaPrincipal padre; // I am your father.
 
-	JRadioButton easy;
-	JRadioButton medium;
-	JRadioButton hard;
+	public JRadioButton easy;
+	public JRadioButton medium;
+	public JRadioButton hard;
 
-	JComboBox<String> cb;
+	public JComboBox<String> cb;
 
 	public PanelArriba(VentanaPrincipal padre)
 	{

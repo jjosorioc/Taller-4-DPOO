@@ -13,8 +13,8 @@ public class PanelAbajo extends JPanel
 {
 	private VentanaPrincipal padre; // I am your father.
 	
-	JLabel cantidadJugadas;
-	JLabel nombreJugador;
+	public JLabel cantidadJugadas;
+	public JLabel nombreJugador;
 
 	public PanelAbajo(VentanaPrincipal padre)
 	{

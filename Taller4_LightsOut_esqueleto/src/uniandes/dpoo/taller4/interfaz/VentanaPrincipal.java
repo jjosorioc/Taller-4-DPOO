@@ -28,27 +28,27 @@ public class VentanaPrincipal extends JFrame implements ActionListener
 	 * @param args
 	 */
 
-	PanelArriba elDeArriba;
-	PanelAbajo elDeAbajo;
-	PanelDerecha elDeLaDerecha;
-	TableroPanel izquierda;
+	public PanelArriba elDeArriba;
+	public PanelAbajo elDeAbajo;
+	public PanelDerecha elDeLaDerecha;
+	public TableroPanel izquierda;
 
-	JButton Nuevo;
-	JButton Reiniciar;
-	JButton Top_10;
-	JButton CambiarJugador;
+	public JButton Nuevo;
+	public JButton Reiniciar;
+	public JButton Top_10;
+	public JButton CambiarJugador;
 
-	JRadioButton easy;
-	JRadioButton medium;
-	JRadioButton hard;
+	public JRadioButton easy;
+	public JRadioButton medium;
+	public JRadioButton hard;
 
-	JComboBox<String> cb;
-	Integer size = 4;
-	Integer dificultad = 1; // TODO: Ajustar dificultad antes de la última entrega
+	public JComboBox<String> cb;
+	public Integer size = 4;
+	public Integer dificultad = 3;
 
-	Top10Ventana ventanaTop10;
-	static Top10 top10;
-	JLabel cantidadJugadas;
+	public Top10Ventana ventanaTop10;
+	public static Top10 top10;
+	public JLabel cantidadJugadas;
 
 	/*
 	 * CONSTRUCTOR
